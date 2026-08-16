@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Composer, Producer &amp; Sound Designer - ethereal, atmospheric music for games, film, and artists. Berklee College of Music trained.">
+    <meta property="og:title" content="Illidan - Composer, Producer &amp; Sound Designer">
+    <meta property="og:description" content="Ethereal, atmospheric sound for games, film, and artists. 7 years of independent production.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Illidan - Composer, Producer &amp; Sound Designer">
+    <meta name="twitter:description" content="Ethereal, atmospheric sound for games, film, and artists.">
+    <link rel="canonical" href="https://illidanmusic.com/">
+    <title>Illidan - Composer, Producer &amp; Sound Designer</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Illidan",
+      "jobTitle": "Composer, Producer & Sound Designer",
+      "url": "https://illidanmusic.com",
+      "sameAs": [
+        "https://instagram.com/illidan",
+        "https://soundcloud.com/illidan",
+        "https://youtube.com/@illidan"
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Berklee College of Music"
+      },
+      "knowsAbout": ["Game Scoring", "Film Scoring", "Sound Design", "Music Production", "Sample Packs"]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        /* ── Reset & Design Tokens ── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg:          #0d0d0d;
+            --surface:     #1a1a1a;
+            --surface-alt: #222222;
+            --border:      #2e2e2e;
+            --text:        #f0f0f0;
+            --text-muted:  #888888;
+            --text-dim:    #555555;
+            --accent:      #ff6b4a;
+            --accent-glow: rgba(255, 107, 74, 0.10);
+            --radius:      0;
+            --transition:  160ms ease;
+            --font-heading: 'Space Mono', 'Courier New', monospace;
+            --font-body:    'Space Mono', 'Courier New', monospace;
+            --max-width:    1100px;
+            --nav-height:   64px;
+            --spacing-xs:   0.5rem;
+            --spacing-sm:   1rem;
+            --spacing-md:   2rem;
+            --spacing-lg:   4rem;
+            --spacing-xl:   6rem;
+        }
+
+        html { scroll-behavior: smooth; scroll-padding-top: var(--nav-height); }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-weight: 400;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ── Focus ── */
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* ── Skip Link ── */
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: var(--spacing-sm);
+            background: var(--accent);
+            color: #06060a;
+            padding: 0.5rem 1rem;
+            z-index: 1000;
+            font-weight: 400;
+            font-family: var(--font-heading);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .skip-link:focus { top: var(--spacing-sm); }
+
+        /* ── Navigation ── */
+        .nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: var(--nav-height);
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+        }
+        .nav-inner {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: color var(--transition);
+            padding: 0.25rem 0;
+            border-bottom: 1px solid transparent;
+        }
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        /* Hamburger */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 101;
+        }
+        .nav-toggle span {
+            display: block;
+            width: 22px;
+            height: 1.5px;
+            background: var(--text);
+            margin: 5px 0;
+            transition: transform 220ms ease, opacity 220ms ease;
+        }
+        .nav.open .nav-toggle span:nth-child(1) { transform: rotate(45deg) translate(4px, 5px); }
+        .nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+        .nav.open .nav-toggle span:nth-child(3) { transform: rotate(-45deg) translate(4px, -5px); }
+
+        /* ── Sections ── */
+        .section { padding: var(--spacing-xl) var(--spacing-md); }
+        .section-inner { max-width: var(--max-width); margin: 0 auto; }
+
+        .section-label {
+            font-family: var(--font-heading);
+            font-size: 0.6rem;
+            font-weight: 400;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: var(--spacing-sm);
+        }
+        .section-label::before {
+            content: '// ';
+            color: var(--text-dim);
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 400;
+            line-height: 1.3;
+            letter-spacing: 0.04em;
+            margin-bottom: var(--spacing-md);
+            color: var(--text);
+            text-transform: uppercase;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: var(--nav-height);
+        }
+        .hero-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--text);
+        }
+        .hero-subhead {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            border-left: 2px solid var(--accent);
+            padding-left: 1.25rem;
+            box-shadow: -4px 0 12px var(--accent-glow);
+        }
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        /* ── Buttons ── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.8rem;
+            font-family: var(--font-heading);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all var(--transition);
+            cursor: pointer;
+            clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+            position: relative;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg);
+        }
+        .btn-primary:hover {
+            background: #33eaff;
+            box-shadow: 0 0 24px var(--accent-glow);
+        }
+        .btn-primary:active { background: #e55a3a; }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 0.7rem 1.8rem;
+        }
+        .btn-ghost:hover {
+            background: rgba(255, 107, 74, 0.06);
+            box-shadow: 0 0 20px var(--accent-glow), inset 0 0 12px rgba(255, 107, 74, 0.05);
+        }
+
+        /* ── Reel Player ── */
+        .reel-player {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            max-width: 560px;
+            clip-path: polygon(0 6px, 6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%);
+        }
+        .reel-play-btn {
+            width: 48px; height: 48px;
+            background: var(--accent);
+            border: none;
+            cursor: pointer;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: box-shadow 200ms ease;
+            clip-path: polygon(4px 0, 100% 0, calc(100% - 4px) 100%, 0 100%);
+        }
+        .reel-play-btn:hover { box-shadow: 0 0 30px var(--accent-glow), 0 0 60px rgba(255, 107, 74, 0.08); }
+        .reel-play-btn svg { width: 20px; height: 20px; fill: var(--bg); margin-left: 3px; }
+        .reel-waveform {
+            flex: 1;
+            height: 48px;
+            background: repeating-linear-gradient(
+                90deg,
+                rgba(255, 107, 74, 0.2) 0px,
+                rgba(255, 107, 74, 0.2) 2px,
+                transparent 2px,
+                transparent 4px
+            );
+            opacity: 0.4;
+        }
+        .reel-label {
+            font-family: var(--font-heading);
+            font-size: 0.6rem;
+            color: var(--accent);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        /* ── Demo Reels ── */
+        .reels-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: var(--spacing-md);
+        }
+        .reel-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 2rem;
+        }
+        .reel-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+        .reel-card .reel-duration {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            letter-spacing: 0.04em;
+            margin-bottom: 1.5rem;
+        }
+        .reel-card ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        .reel-card ul li {
+            padding: 0.4rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .reel-card ul li::before {
+            content: '> ';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 0.75rem;
+        }
+        .reel-status {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+        }
+
+        /* ── Services ── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: var(--spacing-md);
+        }
+        .service-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            transition: border-color var(--transition);
+        }
+        .service-card:hover { border-color: var(--accent); }
+
+        /* Visual rhythm: larger cards break the uniform grid */
+        .service-card.featured {
+            grid-column: span 2;
+            border-color: var(--accent);
+            flex-direction: row;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+        .service-card.featured .service-card-body { flex: 1; }
+        .service-card.featured .btn { align-self: flex-end; flex-shrink: 0; }
+        .service-card .service-icon {
+            font-size: 1.3rem;
+            margin-bottom: 0.25rem;
+        }
+        .service-card h4 {
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.6;
+            flex: 1;
+        }
+        .service-card .btn {
+            align-self: flex-start;
+            font-size: 0.7rem;
+            padding: 0.5rem 1rem;
+        }
+
+        /* ── About ── */
+        .about-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+            align-items: start;
+            margin-top: var(--spacing-md);
+        }
+        .about-photo {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: var(--surface);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            font-size: 0.75rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 1rem;
+        }
+        .about-body h3 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+        .about-body p {
+            margin-bottom: 1.2rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+        .about-body p:last-of-type { margin-bottom: 0; }
+        .about-body hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 2rem 0;
+            position: relative;
+        }
+        .about-body hr::after {
+            content: '///';
+            position: absolute;
+            top: -0.6rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg);
+            padding: 0 0.75rem;
+            color: var(--accent);
+            font-family: var(--font-heading);
+            font-size: 0.55rem;
+            letter-spacing: 0.2em;
+        }
+
+        /* ── Credits ── */
+        .credits-list {
+            margin-top: var(--spacing-md);
+        }
+        .credits-block {
+            margin-bottom: 2.5rem;
+        }
+        .credits-block h4 {
+            font-family: var(--font-heading);
+            font-size: 0.65rem;
+            font-weight: 400;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .credits-block p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 2;
+        }
+        .credits-block p span {
+            color: var(--text);
+            font-weight: 400;
+        }
+
+        /* ── Contact ── */
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: var(--spacing-md);
+        }
+        .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+        .contact-form label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 0.7rem 0.9rem;
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            transition: border-color var(--transition);
+            resize: vertical;
+        }
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 2px var(--accent-glow);
+        }
+        .contact-form textarea { min-height: 120px; }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .contact-info .email {
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 400;
+            letter-spacing: 0.06em;
+        }
+        .contact-info .email:hover { text-decoration: underline; }
+        .contact-social {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .contact-social a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid transparent;
+            transition: color var(--transition), border-color var(--transition);
+        }
+        .status-line {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: var(--radius);
+        }
+
+        /* ── 404 State ── */
+        .not-found {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--spacing-xl) var(--spacing-md);
+        }
+        .not-found-inner h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 500;
+            color: var(--text-dim);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        .not-found-inner p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        /* ── Empty State ── */
+        .empty-state {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--text-dim);
+            border: 1px dashed var(--border);
+            border-radius: var(--radius);
+        }
+        .empty-state .empty-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+        .empty-state p { font-size: 0.9rem; }
+
+        /* ── Loading Skeleton ── */
+        .skeleton {
+            background: linear-gradient(90deg, var(--surface) 25%, var(--surface-alt) 50%, var(--surface) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.4s ease infinite;
+            border-radius: var(--radius);
+        }
+        @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+        .skeleton-text { height: 14px; margin-bottom: 8px; }
+        .skeleton-text:last-child { width: 60%; }
+        .skeleton-card { height: 180px; }
+
+        /* ── Footer ── */
+        .footer {
+            padding: var(--spacing-lg) var(--spacing-md);
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0.06em;
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+        }
+
+        /* ── Reveal Animation ── */
+        .reveal {
+            opacity: 0;
+            transition: opacity 700ms ease;
+        }
+        .reveal.visible { opacity: 1; }
+
+        /* ── Error State ── */
+        .form-error {
+            font-size: 0.78rem;
+            color: #d4856a;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .form-error.visible { display: block; }
+        input[aria-invalid="true"],
+        textarea[aria-invalid="true"] {
+            border-color: #d4856a;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 820px) {
+            .nav-links {
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: rgba(10, 10, 10, 0.97);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 280ms ease;
+            }
+            .nav.open .nav-links { opacity: 1; pointer-events: auto; }
+            .nav-links a { font-size: 1.1rem; }
+            .nav-toggle { display: block; }
+
+            .reels-grid { grid-template-columns: 1fr; }
+            .about-layout { grid-template-columns: 1fr; }
+            .about-photo { max-width: 200px; }
+            .contact-layout { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .service-card.featured { grid-column: span 1; flex-direction: column; gap: 1rem; }
+        }
+
+        @media (max-width: 480px) {
+            :root { --spacing-xl: 4rem; --spacing-lg: 2.5rem; }
+            .hero-ctas { flex-direction: column; }
+            .btn { justify-content: center; }
+            .reel-player { flex-direction: column; text-align: center; }
+            .section { padding-left: 1.25rem; padding-right: 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo" aria-label="Illidan Home">Illidan</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="#reels" role="menuitem">Reels</a></li>
+                <li role="none"><a href="#services" role="menuitem">Services</a></li>
+                <li role="none"><a href="#about" role="menuitem">About</a></li>
+                <li role="none"><a href="#credits" role="menuitem">Credits</a></li>
+                <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main">
+
+        <!-- ── Hero ── -->
+        <section class="hero section" aria-labelledby="hero-heading">
+            <div class="hero-inner">
+                <h1 id="hero-heading">Composer, Producer<br>&amp; Sound Designer</h1>
+                <p class="hero-subhead">
+                    I'm a composer, producer, and multi-instrumentalist (piano and guitar) with 7 years of independent production rooted in the Plugg scene, currently completing a Music Theory &amp; Composition certificate at Berklee. I write beautiful, emotionally resonant melodies quickly - then build full, immersive productions around them. Not templates, not presets: every piece is built from scratch around your vision.<br><br>
+                    Featured in The FADER's Top 30 Rap Songs of 2024. 5 million+ streams across my productions. If you want original, expressive, and memorable - send me a reference and let's make something special.
+                </p>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn btn-primary">Hire Me for Your Project</a>
+                    <a href="#store" class="btn btn-ghost">Browse Sample Packs &amp; Beats</a>
+                </div>
+                <div class="reel-player" aria-label="Demo reel player">
+                    <button class="reel-play-btn" aria-label="Play demo reel">
+                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                    <div>
+                        <div class="reel-label">Scoring Reel</div>
+                        <div class="reel-waveform" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Demo Reels ── -->
+        <section class="section" id="reels" aria-labelledby="reels-heading">
+            <div class="section-inner reveal">
+                <div class="section-label">Demo Reels</div>
+                <h2 class="section-title" id="reels-heading">Listen to my work</h2>
+                <div class="reels-grid">
+                    <div class="reel-card">
+                        <h3>Reel A - Game &amp; Film Scoring</h3>
+                        <div class="reel-duration">90 seconds</div>
+                        <ul>
+                            <li>Atmospheric / ambient (ethereal, textural)</li>
+                            <li>Emotional / piano-led (instrumental chops + theory)</li>
+                            <li>Tension / action (range)</li>
+                        </ul>
+                        <div class="reel-player" aria-label="Game and film scoring reel player" style="max-width: 100%;">
+                            <button class="reel-play-btn" aria-label="Play scoring reel">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </button>
+                            <div>
+                                <div class="reel-label">Spec / Demo Reel</div>
+                                <div class="reel-waveform" aria-hidden="true"></div>
+                            </div>
+                        </div>
+                        <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-dim);">
+                            Berklee College of Music - Theory &amp; Composition
+                        </p>
+                    </div>
+                    <div class="reel-card">
+                        <h3>Reel B - Production &amp; Sound Design</h3>
+                        <div class="reel-duration">60 seconds</div>
+                        <ul>
+                            <li>A beat produced with an artist vocal</li>
+                            <li>A preset / sound design moment</li>
+                            <li>A sample pack loop</li>
+                            <li>A remix snippet</li>
+                        </ul>
+                        <span class="reel-status">Ready</span>
+                        <div class="reel-player" aria-label="Production and sound design reel player" style="max-width: 100%; margin-top: 1rem;">
+                            <button class="reel-play-btn" aria-label="Play production reel">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </button>
+                            <div>
+                                <div class="reel-label">Production Reel</div>
+                                <div class="reel-waveform" aria-hidden="true"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Services ── -->
+        <section class="section" id="services" aria-labelledby="services-heading">
+            <div class="section-inner reveal">
+                <div class="section-label">Services</div>
+                <h2 class="section-title" id="services-heading">What I can do for you</h2>
+                <div class="services-grid">
+                    <div class="service-card featured">
+                        <div class="service-card-body">
+                            <div class="service-icon" aria-hidden="true">🎮</div>
+                            <h4>Game Scoring</h4>
+                            <p>Atmospheric and adaptive music for indie and AAA titles. I build dynamic scores that respond to gameplay states - exploration, combat, tension, resolution - with the harmonic depth Berklee trained me to deliver.</p>
+                        </div>
+                        <a href="#contact" class="btn btn-ghost">Start a project</a>
+                    </div>
+                    <div class="service-card featured">
+                        <div class="service-card-body">
+                            <div class="service-icon" aria-hidden="true">🎬</div>
+                            <h4>Film &amp; TV Scoring</h4>
+                            <p>Ethereal scores for film, streaming, and advertising. I write to picture, matching emotional arcs with melodic themes that stick. Credits include placements featured in The FADER and tracks with 5M+ streams.</p>
+                        </div>
+                        <a href="#contact" class="btn btn-ghost">Pitch your project</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon" aria-hidden="true">📦</div>
+                        <h4>Sample Packs</h4>
+                        <p>Plugg &amp; ethereal sample packs on Splice, Loopmasters, and more.</p>
+                        <a href="#store" class="btn btn-ghost">Browse packs</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon" aria-hidden="true">🎛️</div>
+                        <h4>Preset &amp; Sound Design</h4>
+                        <p>Custom preset banks for Serum, Vital, and more. Each bank is built around a specific sonic palette rather than a grab-bag of defaults.</p>
+                        <a href="#contact" class="btn btn-ghost">Commission presets</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon" aria-hidden="true">🔀</div>
+                        <h4>Production &amp; Remixes</h4>
+                        <p>Producer-for-hire and official remixes. Send me a vocal, reference, or rough idea and I'll build a full production around it.</p>
+                        <a href="#contact" class="btn btn-ghost">Hire me</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon" aria-hidden="true">🎵</div>
+                        <h4>Beats &amp; Licensing</h4>
+                        <p>Plugg beats for artists - lease and exclusive licensing available.</p>
+                        <a href="#store" class="btn btn-ghost">Buy beats</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon" aria-hidden="true">📺</div>
+                        <h4>Tutorials &amp; VODs</h4>
+                        <p>250+ hours of producer method content, available for purchase. Watch how I build tracks from scratch.</p>
+                        <a href="#store" class="btn btn-ghost">Learn my methods</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── About ── -->
+        <section class="section" id="about" aria-labelledby="about-heading">
+            <div class="section-inner reveal">
+                <div class="section-label">About</div>
+                <h2 class="section-title" id="about-heading">Who I am</h2>
+                <div class="about-layout">
+                    <div class="about-photo" aria-hidden="true">
+                        Press photo<br>placeholder
+                    </div>
+                    <div class="about-body">
+                        <h3>Composer, Producer &amp; Sound Designer</h3>
+                        <p>
+                            I'm a composer, producer, and multi-instrumentalist (piano and guitar) with 7 years of independent production rooted in the Plugg scene. I'm completing a Music Theory &amp; Composition certificate at Berklee College of Music, which informs everything I make - from formal harmonic choices to the way I structure a piece to land emotionally. I score games and film, design sounds and presets, produce for artists, and create sample packs - all filtered through a sonic identity that's ethereal, atmospheric, and emotionally direct.
+                        </p>
+                        <p>
+                            My strongest skill is writing beautiful, emotionally resonant melodies quickly and instinctively, then building full instruments around them and shaping them into full pieces that feel melodic, playful, catchy, harmonically rich, and emotionally deep. I love layering in ear candy - the small details and textures that keep pulling listeners back in. A lot of my work sits slightly outside the mainstream. I'm interested in intentional artistic choices, whether that means unexpected harmony, unusual textures, or distorted elements used in a creative way. The result is music that feels niche, expressive, and true to itself.
+                        </p>
+                        <p>
+                            I bring formal composition training, instrumental skill across multiple instruments, 7 years of underground credibility with an established US collaboration network, and a sonic identity you can hear across everything I touch. My work has proven it connects widely - one of my productions was featured in The FADER's Top 30 Rap Songs of 2024, and another has reached over 5 million streams. I also have 250+ hours of streamed producer-method content.
+                        </p>
+                        <p>
+                            If you're a game developer, film director, artist, or label - someone who values originality and emotional impact - I'd love to hear what you're building. Send me a reference, concept, vocal, or rough idea as your inspiration, and I can create something custom around your vision.
+                        </p>
+                        <p>
+                            Hit the Contact button above and let's make something special.
+                        </p>
+                        <hr aria-hidden="true">
+                        <p>
+                            If you want something safe and generic, I may not be the right fit. But if you want a beat that feels original, expressive, and memorable, we'll probably work well together.
+                        </p>
+                        <p>
+                            I'm also continually sharpening my craft and am currently studying part-time online through Berklee, which helps me keep developing both technically and creatively.
+                        </p>
+                        <p>
+                            My work has already connected on a larger scale as well - one of my beats was featured on The FADER's Top 30 Rap Songs of 2024, and another track I produced grew to over 5 million streams.
+                        </p>
+                        <p>
+                            You can send me a reference, a vocal, a rough idea, or even just a mood or inspiration, and I can build something custom around it. I'd especially love to work with artists who care about originality and emotional impact.
+                        </p>
+                        <p>
+                            Hit the Contact button above and let's make something special.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Credits ── -->
+        <section class="section" id="credits" aria-labelledby="credits-heading">
+            <div class="section-inner reveal">
+                <div class="section-label">Credits &amp; Experience</div>
+                <h2 class="section-title" id="credits-heading">Track record</h2>
+                <div class="credits-list">
+                    <div class="credits-block">
+                        <h4>Production Credits</h4>
+                        <p>
+                            <span>Artist Name</span> - Track/Project Title (Role: Producer)<br>
+                            <span>Artist Name</span> - Track/Project Title (Role: Producer)
+                        </p>
+                    </div>
+                    <div class="credits-block">
+                        <h4>Sample Packs</h4>
+                        <p>
+                            <span>Pack Name</span> - Splice Sounds (2026)<br>
+                            <span>Pack Name</span> - Other Platform (2026)
+                        </p>
+                    </div>
+                    <div class="credits-block">
+                        <h4>Education</h4>
+                        <p>
+                            <span>Berklee College of Music</span> - Music Theory &amp; Composition Certificate (2026)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Contact ── -->
+        <section class="section" id="contact" aria-labelledby="contact-heading">
+            <div class="section-inner reveal">
+                <div class="section-label">Contact</div>
+                <h2 class="section-title" id="contact-heading">Get in touch</h2>
+                <div class="contact-layout">
+                    <form class="contact-form" action="#" method="post" id="contactForm">
+                        <label>
+                            Name
+                            <input type="text" name="name" required autocomplete="name" placeholder="Your name" aria-describedby="name-error">
+                            <span class="form-error" id="name-error" role="alert">Please enter your name.</span>
+                        </label>
+                        <label>
+                            Email
+                            <input type="email" name="email" required autocomplete="email" placeholder="you@example.com" aria-describedby="email-error">
+                            <span class="form-error" id="email-error" role="alert">Please enter a valid email address.</span>
+                        </label>
+                        <label>
+                            Project Type
+                            <select name="project_type">
+                                <option value="">Select…</option>
+                                <option value="game-scoring">Game Scoring</option>
+                                <option value="film-scoring">Film &amp; TV Scoring</option>
+                                <option value="preset-design">Preset Design</option>
+                                <option value="production">Production &amp; Remixes</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </label>
+                        <label>
+                            Message
+                            <textarea name="message" required placeholder="Tell me about your project - reference tracks, mood, what you need…" aria-describedby="message-error"></textarea>
+                            <span class="form-error" id="message-error" role="alert">A message helps me understand your project.</span>
+                        </label>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                    <div class="contact-info">
+                        <a href="mailto:name@yourdomain.com" class="email">name@yourdomain.com</a>
+                        <div class="contact-social">
+                            <a href="#" target="_blank" rel="noopener">Instagram</a>
+                            <a href="#" target="_blank" rel="noopener">SoundCloud</a>
+                            <a href="#" target="_blank" rel="noopener">YouTube</a>
+                            <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+                        </div>
+                        <div class="status-line">
+                            Currently accepting: Game scoring projects, preset design commissions, official remix work
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Store Anchor ── -->
+        <div id="store" style="display:none;"></div>
+
+    </main>
+
+    <footer class="footer">
+        &copy; 2026 Illidan. All rights reserved.
+    </footer>
+
+    <script>
+        // Mobile nav toggle
+        const nav = document.getElementById('nav');
+        const toggle = document.getElementById('navToggle');
+        const navLinks = nav.querySelectorAll('.nav-links a');
+
+        toggle.addEventListener('click', () => {
+            const open = nav.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', open);
+            document.body.style.overflow = open ? 'hidden' : '';
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Scroll-triggered reveal
+        const revealEls = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        revealEls.forEach(el => observer.observe(el));
+
+        // Form validation
+        const form = document.getElementById('contactForm');
+        const fields = form.querySelectorAll('input, textarea');
+
+        function clearFieldError(field) {
+            field.removeAttribute('aria-invalid');
+            const err = document.getElementById(field.getAttribute('aria-describedby'));
+            if (err) err.classList.remove('visible');
+        }
+
+        function showFieldError(field) {
+            field.setAttribute('aria-invalid', 'true');
+            const err = document.getElementById(field.getAttribute('aria-describedby'));
+            if (err) err.classList.add('visible');
+        }
+
+        fields.forEach(field => {
+            field.addEventListener('input', () => clearFieldError(field));
+            field.addEventListener('blur', () => {
+                if (field.hasAttribute('required') && !field.value.trim()) {
+                    showFieldError(field);
+                }
+                if (field.type === 'email' && field.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
+                    showFieldError(field);
+                }
+            });
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let valid = true;
+
+            fields.forEach(field => {
+                if (field.hasAttribute('required') && !field.value.trim()) {
+                    showFieldError(field);
+                    valid = false;
+                }
+                if (field.type === 'email' && field.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
+                    showFieldError(field);
+                    valid = false;
+                }
+            });
+
+            if (!valid) return;
+
+            const btn = form.querySelector('button');
+            const original = btn.textContent;
+            btn.textContent = 'Sending…';
+            btn.disabled = true;
+            setTimeout(() => {
+                btn.textContent = 'Message sent!';
+                btn.style.background = '#4a7c59';
+                form.reset();
+                setTimeout(() => {
+                    btn.textContent = original;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 2500);
+            }, 800);
+        });
+    </script>
+</body>
+</html>
