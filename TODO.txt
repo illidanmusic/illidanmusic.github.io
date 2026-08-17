@@ -1,0 +1,1 @@
+- replace `me-press.jpg` with a 600x800 version, which is needed for high DPI screens
